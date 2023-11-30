@@ -1,12 +1,16 @@
 <script setup>
+ import { defineForMobile } from './helpers/uiScreenshotSize';
+
+  let { width, height } = defineForMobile();
+
 </script>
 
 <template>
   <div class="app-component"> 
-    Hello, from App!
+    <router-view />
   </div>
 </template>
 
 <style scoped>
-
+ 
 </style>
