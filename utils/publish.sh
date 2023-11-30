@@ -1,4 +1,4 @@
-source backend/venv
+source backend/venv/bin/activate
 python3 -m pip freeze > backend/requirements.txt
 git add .
 git commit -m "$1"
