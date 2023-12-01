@@ -25,6 +25,7 @@
     .scrollable-area {
         max-height: 300px;
         overflow-y: scroll;
+        overflow-x: hidden;
     }
 
     .scroll-more-indicator {

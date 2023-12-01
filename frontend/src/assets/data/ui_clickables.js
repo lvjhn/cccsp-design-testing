@@ -18,7 +18,7 @@ const UI_Clickables = {
         "subject-details--past" : [0, 342, 192, 27], // *
         "curriculum" : [0, 397, 190, 27], // * 
         "notifications" : [0, 426, 192, 27],
-        "login-page-2" : [] 
+        "login-page-2" : [0, 0, 0, 0] 
     }, 
     "mobile" : {
         "login-page-1" : [44, 288, 191, 23], // * 
@@ -49,7 +49,7 @@ const UI_Clickables = {
         "notifications--configuration" : [150, 63, 123, 17], // *
         "notifications--contact-settings" : [0, 0, 42, 37], // *  
         "sidebar-9" : [0, 467, 233, 31], 
-        "login-page-2" : []
+        "login-page-2" : [0, 0, 0, 0]
     }
 }
 

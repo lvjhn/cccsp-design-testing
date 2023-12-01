@@ -1,4 +1,6 @@
-import { defineStore } from 'pinia'; 
+import { defineStore } from 'pinia';
+import { UI_Clickables } from '../assets/data/ui_clickables';
+import { ibtFlowMobile, ibtFlowWeb } from '../assets/data/ibt_flow';
 
 export const useAppStore = defineStore("app-store", {
     persist: true, 
@@ -18,7 +20,18 @@ export const useAppStore = defineStore("app-store", {
         /** 
          * Mode
          */
-        mode: "mobile"
+        mode: "mobile", 
+
+        /** 
+         * Issues-Based Testing
+         */
+        ibt: {
+            currentPageIndex: 0,
+            pages: {
+                web: {}, 
+                mobile: {}
+            }
+        }
     }),
     getters: {
         getConsentFormInputs(state) {
@@ -31,6 +44,40 @@ export const useAppStore = defineStore("app-store", {
     actions: {
         init() {
             this._init = true;
+
+            if(localStorage.getItem("app-store") != null)   
+                return; 
+
+            /** 
+             *  Set Up IBT
+             */
+            for(let pageName in ibtFlowWeb) {
+                let context = this.ibt.pages.web; 
+                context[pageName] = {
+                    ratings : {
+                        understandability: 3,
+                        intuiveness: 3
+                    },
+                    qai : {
+                        questions: "", 
+                        issues: ""
+                    }
+                } 
+            }
+
+            for(let pageName in ibtFlowMobile) {
+                let context = this.ibt.pages.mobile; 
+                context[pageName] = {
+                    ratings : {
+                        understandability: 4,
+                        intuiveness: 4
+                    }, 
+                    qaf :  {
+                        questions: "", 
+                        issues: ""
+                    }
+                } 
+            }
         },
 
         // Consent Form
@@ -52,8 +99,15 @@ export const useAppStore = defineStore("app-store", {
             this.consentForm.mode = mode; 
         }, 
 
-    
-
-
+        // IBT 
+        gotoNextIBTPage() {
+            this.ibt.currentPageIndex += 1;
+        }, 
+        getCurrentPageName() {
+            return (
+                Object.keys(UI_Clickables[this.mode])[this.ibt.currentPageIndex]
+            );
+        }
+       
     }
 });

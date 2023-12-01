@@ -1,32 +1,37 @@
 import { getScreenHeight, getScreenWidth } from "./screenSize";
 
 export function defineForMobile() {
-    const targetWidth = 420; 
-    const baseHeight = 746.67;
+    const baseWidth = 281; 
+    const baseHeight = 500;
 
-    let actualWidth = targetWidth; 
+    let actualWidth = baseWidth; 
     let actualHeight = baseHeight; 
 
     let screenWidth = getScreenWidth();
 
     // handle devices with widths less than target screen size for mobile
-    if(screenWidth <= targetWidth) {
-        let scaleFactor;
-
-        actualWidth  = screenWidth - 30; 
-        scaleFactor = actualWidth / targetWidth;
-        actualHeight = baseHeight * scaleFactor;
-    } 
+    if(screenWidth <= 420) {
+        actualWidth  = 300; 
+        actualHeight = 533;
+    } else {
+        actualWidth  = 420; 
+        actualHeight = 746;
+    }
 
     return {
         width  : actualWidth, 
-        height : actualHeight
+        height : actualHeight,
+        offsetX : actualWidth / baseWidth,   
+        offsetY : actualHeight / baseHeight,
+        scaleFactorX : actualWidth / baseWidth,
+        scaleFactorY : actualHeight / baseHeight
     }
 }
 
 export function defineForWeb() {
     return {
         width  : 1024, 
-        height : 576
+        height : 576 * 0.9  
     }; 
 }
+

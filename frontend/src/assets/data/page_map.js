@@ -1,6 +1,6 @@
 
 /** 13 pages */
-let webPages = {
+export let webPages = {
     "login-page-cleared" : 1,
     "login-page" : 2,
     "profile" : 3, 
@@ -18,7 +18,7 @@ let webPages = {
 };
 
 /** 19 pages */
-let mobilePages = {
+export let mobilePages = {
     "login-page-cleared" : 1,
     "login-page" : 2, 
     "sidebar" : 3, 
@@ -41,12 +41,12 @@ let mobilePages = {
     "notifications--contact-settings" : 20 
 };
 
-const getScreenshotSource = (mode, page) => {
+export const getScreenshotSource = (mode, page) => {
     let source;
 
-    if(mode == "WEB") {
+    if(mode == "web") {
         source = "/images/ui-screenshots/web/web(" + webPages[page] + ").png"
-    } else if (mode == "MOBILE") {
+    } else if (mode == "mobile") {
         source = "/images/ui-screenshots/mobile/mobile(" + mobilePages[page] + ").png"
     } else {
         throw Error("Unknown mode `" + mode + "`")
@@ -55,4 +55,3 @@ const getScreenshotSource = (mode, page) => {
     return source; 
 }
 
-export { webPages, mobilePages, getScreenshotSource };
