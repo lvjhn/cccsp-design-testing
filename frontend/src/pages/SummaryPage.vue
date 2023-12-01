@@ -14,7 +14,7 @@
                     axios.post("https://lvjhn98.pythonanywhere.com/submit", data)
                         .catch(e => {
                             status.value = 'retrying';
-                            setTimeout(async () => await submit(), 3000);
+                            setTimeout(submit, 3000);
                         })
                         .then(res => {
                             status.value = "submitted";
