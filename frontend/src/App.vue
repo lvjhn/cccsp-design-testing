@@ -59,10 +59,11 @@
 <template>
   <div class="app-component"> 
     <div class="center-fixed loading-screen" v-if="imagesLoaded < imagesToLoad"> 
+      <h1>Loading...</h1>
       Please wait while we are preloading images... 
       <br />
       This will make the activity experience smoother later.
-      <br /> 
+      <br /><br />
       <b>Images Loaded</b>: {{ imagesLoaded }} of {{ imagesToLoad }}
     </div>
     <div v-else>
