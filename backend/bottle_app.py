@@ -15,7 +15,7 @@ app = Bottle()
 
 @app.get("/")
 def index():
-    return static_file("index.html", root='/home/lvjhn98/cccsp-utt/dist/')
+    return static_file("index.html", root='/home/lvjhn98/cccsp-dtt/backend/dist/')
 
 @app.post('/submit')
 def submit():
@@ -43,6 +43,6 @@ def submit():
 
 @app.route('<filepath:path>')
 def server_static(filepath):
-    return static_file(filepath, root='/home/lvjhn98/cccsp-utt/dist/')
+    return static_file(filepath, root='/home/lvjhn98/cccsp-dtt/backend/dist/')
 
 application = app
