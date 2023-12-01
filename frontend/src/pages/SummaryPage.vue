@@ -11,12 +11,14 @@
             setTimeout(async () => {
                 let data = JSON.parse(localStorage.getItem("app-store")); 
                 const response = 
-                    await axios.post("https://lvjhn98.pythonanywhere.com/submit", data)
+                    axios.post("https://lvjhn98.pythonanywhere.com/submit", data)
                         .catch(e => {
                             status.value = 'retrying';
                             setTimeout(async () => await submit(), 3000);
+                        })
+                        .then(res => {
+                            status.value = "submitted";
                         });
-                status.value = "submitted";
             }, 3000);
 
         }
