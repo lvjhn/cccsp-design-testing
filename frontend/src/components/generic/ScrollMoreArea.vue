@@ -8,7 +8,9 @@
 <template>
     <div class="scroll-more-area-component">
         <div class="scrollable-area">
-            <slot></slot>
+            <div class="content"> 
+                <slot></slot>
+            </div>
         </div>
         <br />
         <div class="scroll-more-indicator">
@@ -34,6 +36,10 @@
         text-align: center;
         color: white;
         border: 1px solid black;
+    }
+
+    .content {
+        width: 98%;
     }
 </style>
 

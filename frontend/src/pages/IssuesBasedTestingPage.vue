@@ -1,5 +1,6 @@
 <script setup>
     import { getPlatformName, isMobile } from '../helpers/platformDetector';
+    
     import MobileIBTSection from './IssuesBasedTesting/MobileIBTSection.vue';
     import WebIBTSection from './IssuesBasedTesting/WebIBTSection.vue';
     

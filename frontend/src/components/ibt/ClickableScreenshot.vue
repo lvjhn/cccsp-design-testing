@@ -81,7 +81,6 @@
             <div 
                 class="clickable"
                 :style="{
-                    'background-color' : 'grey', 
                     'opacity' : 0.8, 
                     'marginLeft' : (clickable[0] * screenshotOffsetX) + 'px',
                     'marginTop' : (clickable[1] * screenshotOffsetY) + 'px', 

@@ -4,6 +4,13 @@
     import QuestionOrProblems from './QuestionOrProblems.vue';
     import PageRating from './PageRating.vue';
     import ScrollMoreArea from '../../generic/ScrollMoreArea.vue';
+    import { getPlatformName } from '../../../helpers/platformDetector';
+    import { ibtFlowMobile, ibtFlowWeb } from '../../../assets/data/ibt_flow';
+    import WideButton from '../../generic/WideButton.vue';
+    import { useRouter } from 'vue-router';
+    import { useGenericModal } from '@/composables/generic-modal.js'
+
+    let modal = useGenericModal();
 
     let appStore = useAppStore();
     let currentScreenshot = useCurrentScreenshot();
@@ -11,13 +18,29 @@
     let currentPageIndex = appStore.ibt.currentPageIndex;
     let currentPageName = appStore.getCurrentPageName(); 
     let mode = appStore.mode;
+    
+    let maxIndex; 
 
-   
+    if(getPlatformName() == "mobile") {
+        maxIndex = Object.keys(ibtFlowMobile).length;
+    } else if (getPlatformName() == "web") {
+        maxIndex = Object.keys(ibtFlowWeb).length;
+    }
+
+    console.log(currentPageIndex, maxIndex); 
+
+    let router = useRouter();
+
+    function gotoNextPhase() {
+        modal.hideModal();  
+        router.push("/self-report-testing");
+    }
+    
 </script> 
 
 <template> 
     <div class="task-viewer-modal">
-        <ScrollMoreArea>
+        <ScrollMoreArea  v-if="currentPageIndex < maxIndex - 1">
             <h1 style="font-size: 120%;">
                 Complete the Instructions Below to Proceed
             </h1>
@@ -61,16 +84,20 @@
                 <b>Performing the task below will continue the activity...</b>
                 <br />
                 <b>You cannot proceed until you completed the activity below...</b>
-                <br /> 
-                <br />
-                <div class="task">
-                    {{ currentScreenshot.getCurrentPageTaskMessage() }}
+                <br /> <br />
+                <div class="task" v-html="currentScreenshot.getCurrentPageTaskMessage()">
                 </div>
             </div>
             <br /> 
             <br /> 
+            
         </ScrollMoreArea>
-
+        <div class="completed" v-else> 
+            <h1>You have finished all tasks!</h1>
+            <WideButton @click="gotoNextPhase()">
+                Click Here to Proceed to Next Phase
+            </WideButton>
+        </div>
     </div>
 </template>
 
@@ -92,5 +119,11 @@
         background-color: rgb(234, 234, 234);
         padding: 20px; 
         border-radius: 5px;;
+    }   
+
+    .completed {
+        text-align: center;
     }
+
+    
 </style>

@@ -11,6 +11,7 @@ export function useCurrentScreenshot() {
         getCurrentPageDescription() {
             let pageName = appStore.getCurrentPageName();
 
+
             if(getPlatformName() == "web") {
                 return ibtFlowWeb[pageName].description;
             }

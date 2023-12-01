@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia';
 import { UI_Clickables } from '../assets/data/ui_clickables';
 import { ibtFlowMobile, ibtFlowWeb } from '../assets/data/ibt_flow';
+import { getPlatformName } from '../helpers/platformDetector';
 
 export const useAppStore = defineStore("app-store", {
     persist: true, 
@@ -31,6 +32,22 @@ export const useAppStore = defineStore("app-store", {
                 web: {}, 
                 mobile: {}
             }
+        }, 
+
+        /** 
+         * Self Report Testing 
+         */
+        srt: {
+            0 : 3, 
+            1 : 3, 
+            2 : 3, 
+            3 : 3, 
+            4 : 3, 
+            5 : 3, 
+            6 : 3, 
+            7 : 3, 
+            8 : 3, 
+            9 : 3
         }
     }),
     getters: {
@@ -72,7 +89,7 @@ export const useAppStore = defineStore("app-store", {
                         understandability: 4,
                         intuiveness: 4
                     }, 
-                    qaf :  {
+                    qai :  {
                         questions: "", 
                         issues: ""
                     }
@@ -105,7 +122,7 @@ export const useAppStore = defineStore("app-store", {
         }, 
         getCurrentPageName() {
             return (
-                Object.keys(UI_Clickables[this.mode])[this.ibt.currentPageIndex]
+                Object.keys(UI_Clickables[getPlatformName()])[this.ibt.currentPageIndex]
             );
         }
        

@@ -22,3 +22,7 @@ body {
   font-size: 100%;
 }
 
+.task li {
+  margin-bottom: 16px;
+}
+

@@ -17,21 +17,22 @@
     <div class="question-or-problems-component"> 
         <br />
         <b>Questions</b>
-        <br />
+        <br /> 
         <textarea 
             v-model="qaiModel.questions"
+            placeholder="Do you have any questions regarding the page?"
+        >
+        </textarea>
+        <br />
+        <b>Issues</b>
+        <br />
+        <textarea 
+            v-model="qaiModel.issues"
             placeholder="Do you have any issues about the page? Are there anything confusing about the page? "
         >
         <br />
         </textarea>
         <br /> 
-        <b>Issues</b>
-        <br /> 
-        <textarea 
-            v-model="qaiModel.issues"
-            placeholder="Do you have any questions regarding the page?"
-        >
-        </textarea>
     </div>
 </template>
 
