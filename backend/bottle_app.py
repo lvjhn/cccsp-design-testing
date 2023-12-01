@@ -28,11 +28,11 @@ def submit():
     result_str = json.dumps(result)
 
     # send via smtp
-    conn = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-    conn.login("lstaana@gbox.adnu.edu.ph", config["EMAIL_PASSWORD"])
+    # conn = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+    # conn.login("lstaana@gbox.adnu.edu.ph", config["EMAIL_PASSWORD"])
 
-    conn.sendmail("lstaana@gbox.adnu.edu.ph", "lstaana@gbox.adnu.edu.ph", MIMEText(result_str).as_string())
-    conn.quit()
+    # conn.sendmail("lstaana@gbox.adnu.edu.ph", "lstaana@gbox.adnu.edu.ph", MIMEText(result_str).as_string())
+    # conn.quit()
 
     # store in file
     file = open(config["RESULTS_BASE_PATH"] + "results/" + str(some_uuid) + ".json", "w")
