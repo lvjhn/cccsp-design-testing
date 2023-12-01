@@ -73,7 +73,7 @@ export const useAppStore = defineStore("app-store", {
                 context[pageName] = {
                     ratings : {
                         understandability: 3,
-                        intuiveness: 3
+                        intuitiveness: 3
                     },
                     qai : {
                         questions: "", 
