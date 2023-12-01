@@ -3,10 +3,17 @@ import { UI_Clickables } from '../assets/data/ui_clickables';
 import { ibtFlowMobile, ibtFlowWeb } from '../assets/data/ibt_flow';
 import { getPlatformName } from '../helpers/platformDetector';
 
+function uuidv4() {
+    return "10000000-1000-4000-8000-100000000000".replace(/[018]/g, c =>
+        (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    );
+}
+
 export const useAppStore = defineStore("app-store", {
     persist: true, 
     state: () => ({
         _init: false,
+        uuid: uuidv4(),
 
         /**
          * Consent Form 
