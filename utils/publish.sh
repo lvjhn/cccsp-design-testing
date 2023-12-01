@@ -2,7 +2,7 @@ source backend/env/bin/activate
 python3 -m pip freeze > backend/requirements.txt
 cd frontend 
 yarn build 
-rm ../backend/dist
+rm -rf ../backend/dist
 mv dist ../backend/
 cd ..
 git add .
