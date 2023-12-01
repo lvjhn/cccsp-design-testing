@@ -17,7 +17,7 @@
                             setTimeout(submit, 3000);
                         })
                         .then(res => {
-                            status.value = "submitted";
+                            if(res.data) status.value = "submitted";
                         });
             }, 3000);
 
