@@ -41,6 +41,9 @@
       function preloadImage(url, anImageLoadedCallback){
           var img = new Image();
           img.onload = anImageLoadedCallback;
+          img.onerror = () => {
+            preloadImage(url, anImageLoadedCallback);
+          }
           img.src = url;
       }
   }
