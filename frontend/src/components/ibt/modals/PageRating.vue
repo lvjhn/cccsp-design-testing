@@ -44,7 +44,7 @@
             </li>
             <br />
             <li>
-                <b>In Terms of Intuiveness</b>
+                <b>In Terms of Intuitiveness</b>
                 <br />
                 <ul class="rating"> 
                     <li>
