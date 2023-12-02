@@ -35,11 +35,16 @@ export const useAppStore = defineStore("app-store", {
          */
         ibt: {
             currentPageIndex: 0,
+            currentStep: "<start>",
+            currentStepNo: 1,
+            nextStepEnabled: true,
             pages: {
                 web: {}, 
                 mobile: {}
             }
         }, 
+
+        scrollTop: 0, 
 
         /** 
          * Self Report Testing 
@@ -131,7 +136,27 @@ export const useAppStore = defineStore("app-store", {
             return (
                 Object.keys(UI_Clickables[getPlatformName()])[this.ibt.currentPageIndex]
             );
+        }, 
+        setCurrentStep(step) {
+            console.log("Setting current step to " + step);
+            this.ibt.currentStep = step;
+        },
+        setCurrentStepNo(stepNo) {
+            this.ibt.currentStepNo = stepNo;
+        },
+        setNextStep() {
+            this.setCurrentStepNo(this.ibt.currentStepNo + 1);
+        },
+        resetSteps() {
+            this.setCurrentStepNo(1); 
+            this.setCurrentStep("<start>");
+        },
+
+        /** 
+         * Scrolling
+         */
+        setScrollTop(scrollTop) {
+            this.scrollTop = scrollTop;
         }
-       
     }
 });

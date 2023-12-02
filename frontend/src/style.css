@@ -26,3 +26,7 @@ body {
   margin-bottom: 16px;
 }
 
+
+.pointer-to-fab {
+  text-shadow: 0px 0px 20px black;
+}

@@ -9,6 +9,7 @@
     import WideButton from '../../generic/WideButton.vue';
     import { useRouter } from 'vue-router';
     import { useGenericModal } from '@/composables/generic-modal.js'
+    import { computed, ref } from 'vue';
 
     let modal = useGenericModal();
 
@@ -18,7 +19,11 @@
     let currentPageIndex = appStore.ibt.currentPageIndex;
     let currentPageName = appStore.getCurrentPageName(); 
     let mode = appStore.mode;
-    
+
+    let currentStep = computed(() => appStore.ibt.currentStep);
+    let nextStepEnabled = computed(() => appStore.ibt.nextStepEnabled);
+    let stepNo = computed(() => appStore.ibt.currentStepNo); 
+
     let maxIndex; 
 
     if(getPlatformName() == "mobile") {
@@ -27,7 +32,13 @@
         maxIndex = Object.keys(ibtFlowWeb).length;
     }
 
-    console.log(currentPageIndex, maxIndex); 
+    let maxSteps = computed(() => {
+        if(currentScreenshot.shouldRatePage()) {
+            return 4; 
+        } else {
+            return 2;
+        }
+    });
 
     let router = useRouter();
 
@@ -35,69 +46,101 @@
         modal.hideModal();  
         router.push("/self-report-testing");
     }
+
+    function handleNextStep() {
+        let hasRatings = currentScreenshot.shouldRatePage(); 
+        let currentStep = appStore.ibt.currentStep; 
+
+        if(currentStep == '<start>') {
+            if(hasRatings) {
+                appStore.setCurrentStep('rate-page');
+            }
+            else {
+                appStore.setCurrentStep('perform-challenge-task')
+            }
+            appStore.setNextStep();
+        }
+        else if(currentStep == 'rate-page') {
+            appStore.setCurrentStep('write-questions-or-issues');
+            appStore.setNextStep();
+        }
+        else if(currentStep == 'write-questions-or-issues') {
+            appStore.setCurrentStep('perform-challenge-task');
+            appStore.setNextStep(); 
+        }
+
+    }
     
 </script> 
 
 <template> 
     <div class="task-viewer-modal">
-        <ScrollMoreArea  v-if="currentPageIndex < maxIndex - 1">
-            <h1 style="font-size: 120%;">
-                Complete the Instructions Below to Proceed
-            </h1>
-            <hr />
+        <div class="main-content" v-if="currentPageIndex < (maxIndex - 1)">
+            <ScrollMoreArea>
+                <h1 class="task-modal-title"> 
+                    Task {{  currentPageIndex + 1 }} of {{ maxIndex }}
+                </h1>
+                <div 
+                    class="step" 
+                    v-if="currentStep == 'read-page-description' || 
+                          currentStep == '<start>'">
+                    <h2>Step {{ stepNo }} of {{  maxSteps }}: Read Page Description</h2>
+                    <div class="page-description">
+                        <div 
+                            class="description" 
+                            v-html="currentScreenshot.getCurrentPageDescription()"
+                        >   
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step" v-if="currentStep == 'rate-page'">
+                    <h2>Step {{ stepNo }} of {{  maxSteps }}: Rate Page</h2>
+                    <div class="page-rating">
+                        View the page on the background and come back here. 
+                        Rate the page about the aspects 
+                        below. 
+                        <PageRating />
+                    </div>
+                </div>
+
+                <div class="step" v-if="currentStep == 'write-questions-or-issues'">
+                    <h2>Step {{ stepNo }} of {{  maxSteps }}: Write Questions or Problems (OPTIONAL)</h2>
+                    <div class="page-rating">
+                        <QuestionOrProblems />
+                    </div>
+                </div>
+
+                <div class="step" v-if="currentStep == 'perform-challenge-task'">
+                    <h2>Step {{ stepNo }} of {{  maxSteps }}: Perform Challenge Task</h2>
+                    <div class="challenge-task"> 
+                        <b>Performing the task below will continue the activity...</b>
+                        <br />
+                        <b>You cannot proceed until you completed the activity below...</b>
+                        <br /> <br />
+                        <div class="task" v-html="currentScreenshot.getCurrentPageTaskMessage()">
+                        </div>
+                    </div>
+                </div>
             
-            <h2>Step 1 of 4: Read Page Description</h2>
-            <div class="page-description">
-                <div class="description">
-                    {{ currentScreenshot.getCurrentPageDescription() }}
-                </div>
-            </div>
+                
+            </ScrollMoreArea>
 
-            <h2>Step 2 of 4: Rate Page</h2>
-            <div class="page-rating">
-                View the page on the background and come back here. 
-                Rate the page about the aspects 
-                below. 
-
-                <div v-if="currentScreenshot.shouldRatePage()">
-                    <PageRating />
-                </div>
-                <div v-else> 
-                    <i>You don't have to rate this page.</i>
-                </div> 
-            </div>
-
-            <h2>Step 3 of 4: Write Questions or Problems (OPTIONAL)</h2>
-            <div class="page-rating">
-                View the page on the background then come back here. 
-                Try to see if you have 
-                any questions or issues with how it is designed. If you have
-                any, try to write them down on the boxes below. These 
-                questions are optional (not required) and can skip them if 
-                you want to.
-                <QuestionOrProblems />
-            </div>
-
-
-            <h2>Step 4 of 4: Perform Challenge Task</h2>
-            <div class="challenge-task"> 
-                <b>Performing the task below will continue the activity...</b>
-                <br />
-                <b>You cannot proceed until you completed the activity below...</b>
-                <br /> <br />
-                <div class="task" v-html="currentScreenshot.getCurrentPageTaskMessage()">
-                </div>
-            </div>
-            <br /> 
-            <br /> 
-            
-        </ScrollMoreArea>
+            <WideButton    
+                :disabled="!nextStepEnabled" @click="handleNextStep()"
+                v-if="stepNo < maxSteps"
+            >
+                Proceed to Next Step
+            </WideButton>
+        </div>
         <div class="completed" v-else> 
             <h1>You have finished all tasks!</h1>
             <WideButton @click="gotoNextPhase()">
                 Click Here to Proceed to Next Phase
             </WideButton>
         </div>
+
+
     </div>
 </template>
 
@@ -107,7 +150,6 @@
     }
 
     .task-viewer-modal > div > div {
-        margin-left: 20px;
     }
 
     .task-viewer-modal h2 {
@@ -118,12 +160,18 @@
     .task, .description {
         background-color: rgb(234, 234, 234);
         padding: 20px; 
-        border-radius: 5px;;
+        border-radius: 5px;
     }   
 
     .completed {
         text-align: center;
     }
 
+    .task-modal-title {
+        font-size: 150%;
+        text-align: center;
+        padding-bottom: 5px;
+        border-bottom: 5px solid black;
+    }
     
 </style>

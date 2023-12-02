@@ -17,18 +17,24 @@
         }"
         :disabled="isDisabled"
     >
-        <slot></slot>
+        <div class="inner-content">
+            <slot></slot>
+        </div>
     </button>
 </template>
 
 <style scoped>
     .wide-button-component {
         width: 100%;
-        background-color: black; 
+        background-color: rgb(33, 153, 212); 
         color: white;
+        font-weight: bold;
         border-radius: 5px;
         border: none; 
-        padding: 10px 20px;
+    }
+
+    .inner-content {
+        margin: 10px 20px;
     }
 
     .wide-button-component.enabled:hover {
@@ -42,6 +48,11 @@
 
     .wide-button-component.disabled {
         opacity: 0.8;
+    }
+
+    .wide-button-component[disabled] {
+        opacity: 0.8;
+        background-color: grey;
     }
 </style>
 

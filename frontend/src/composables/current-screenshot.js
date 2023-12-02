@@ -35,9 +35,9 @@ export function useCurrentScreenshot() {
             let pageName = appStore.getCurrentPageName();
 
             if(getPlatformName() == "web") 
-                return ibtFlowWeb[pageName].taskMessage;
+                return ibtFlowWeb[pageName].hasRatings;
             else if(getPlatformName() == "mobile")
-                return ibtFlowMobile[pageName].taskMessage;
+                return ibtFlowMobile[pageName].hasRatings;
             else 
                 throw Error("Unknown mode.");
         }

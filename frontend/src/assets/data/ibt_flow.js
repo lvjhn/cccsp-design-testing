@@ -11,7 +11,7 @@ export const ibtFlowWeb = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -32,7 +32,7 @@ export const ibtFlowWeb = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -57,7 +57,7 @@ export const ibtFlowWeb = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -82,7 +82,7 @@ export const ibtFlowWeb = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -105,7 +105,7 @@ export const ibtFlowWeb = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -128,7 +128,7 @@ export const ibtFlowWeb = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -150,7 +150,7 @@ export const ibtFlowWeb = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -171,7 +171,7 @@ export const ibtFlowWeb = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -193,7 +193,7 @@ export const ibtFlowWeb = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -213,7 +213,7 @@ export const ibtFlowWeb = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -235,7 +235,7 @@ export const ibtFlowWeb = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -258,7 +258,7 @@ export const ibtFlowWeb = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -277,7 +277,7 @@ export const ibtFlowWeb = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -300,7 +300,7 @@ export const ibtFlowWeb = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -336,7 +336,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -357,7 +357,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -379,7 +379,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -402,7 +402,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -422,7 +422,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -445,7 +445,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -468,7 +468,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -488,7 +488,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -511,7 +511,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -532,7 +532,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -554,7 +554,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -577,7 +577,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -598,7 +598,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -621,7 +621,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -657,7 +657,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -680,7 +680,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -700,7 +700,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -722,7 +722,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -745,7 +745,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -767,7 +767,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -790,7 +790,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -813,7 +813,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -832,7 +832,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -855,7 +855,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -875,7 +875,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 
@@ -897,7 +897,7 @@ export const ibtFlowMobile = {
         "taskMessage" : /* html */ `
             <ul> 
                 <li> 
-                    Go back to page by clicking on the 🛈 button on the bottom right 
+                    Go back to page by clicking on the ⓘ button on the bottom right 
                     corner of the screen. 
                 </li>
                 <li> 

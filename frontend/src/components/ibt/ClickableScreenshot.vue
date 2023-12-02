@@ -56,6 +56,7 @@
     function handleCorrectAreaClicked() {
        console.log("Correct area clicked!");
        appStore.gotoNextIBTPage();
+       appStore.resetSteps();
     }
     
 </script> 
